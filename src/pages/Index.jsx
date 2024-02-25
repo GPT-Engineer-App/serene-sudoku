@@ -84,10 +84,10 @@ const Index = () => {
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </Select>
-      <Grid templateColumns="repeat(9, 1fr)" gap={1} my={4}>
+      <Grid templateColumns="repeat(9, 1fr)" gap={0} my={4}>
         {grid.map((row, rowIndex) =>
           row.map((value, colIndex) => (
-            <GridItem w="40px" h="40px" key={`${rowIndex}-${colIndex}`}>
+            <GridItem w="40px" h="40px" key={`${rowIndex}-${colIndex}`} borderRight={colIndex % 3 === 2 && colIndex !== 8 ? "2px solid" : "1px solid"} borderBottom={rowIndex % 3 === 2 && rowIndex !== 8 ? "2px solid" : "1px solid"} borderColor="gray.300">
               <Input value={value} onChange={(e) => handleInputChange(rowIndex, colIndex, e.target.value)} maxLength="1" textAlign="center" />
             </GridItem>
           )),
