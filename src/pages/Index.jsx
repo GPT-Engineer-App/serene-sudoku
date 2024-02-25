@@ -4,11 +4,27 @@ import { FaRedo, FaLightbulb } from "react-icons/fa";
 
 // Sudoku Solver & Generator (for simplicity, using a placeholder function)
 const generateSudoku = (difficulty) => {
-  // This should be replaced with an actual Sudoku puzzle generator
-  // For now, we create an empty 9x9 grid
-  return Array(9)
-    .fill()
-    .map(() => Array(9).fill(""));
+  // Pre-defined puzzles for each difficulty level
+  const puzzles = {
+    easy: [
+      ["5", "3", "", "", "7", "", "", "", ""],
+      ["6", "", "", "1", "9", "5", "", "", ""],
+      ["", "9", "8", "", "", "", "", "6", ""],
+      ["8", "", "", "", "6", "", "", "", "3"],
+      ["4", "", "", "8", "", "3", "", "", "1"],
+      ["7", "", "", "", "2", "", "", "", "6"],
+      ["", "6", "", "", "", "", "2", "8", ""],
+      ["", "", "", "4", "1", "9", "", "", "5"],
+      ["", "", "", "", "8", "", "", "7", "9"],
+    ],
+    medium: [
+      // A medium difficulty puzzle
+    ],
+    hard: [
+      // A hard difficulty puzzle
+    ],
+  };
+  return puzzles[difficulty] || puzzles.easy;
 };
 
 const Index = () => {
